@@ -31,6 +31,7 @@ a{text-decoration:none}
 .navbar-brand i{color:var(--teal);font-size:1.8rem}
 .navbar-brand small{display:block;font-size:.65rem;letter-spacing:3px;color:var(--teal);font-weight:600}
 .navbar-brand img{width: 100px;}
+
 .nav-link{color:var(--navy)!important;font-weight:600;margin:0 6px;position:relative;cursor:pointer}
 .nav-link.active,.nav-link:hover{color:var(--teal)!important}
 .nav-link.active::after{content:"";position:absolute;left:12px;right:12px;bottom:-4px;height:2px;background:var(--teal);border-radius:2px}
@@ -148,6 +149,62 @@ footer .socials a:hover{background:var(--teal);padding:0}
 /* Scroll top */
 #scrollTop{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;border:none;display:none;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(10,37,64,.25);z-index:999;cursor:pointer}
 #scrollTop.show{display:flex}
+/* MOBILE NAVBAR FIX */
+.navbar-brand img {
+  width: 90px;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  background-image: none;
+  width: 25px;
+  height: 2px;
+  background-color: var(--navy);
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: var(--navy);
+  left: 0;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  top: 7px;
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar-brand img {
+    width: 75px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
 </style>
 </head>
 <body>
