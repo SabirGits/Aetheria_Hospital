@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aetheria Global Hospital — Advanced Care, Personal Touch</title>
+<meta name="description" content="Aetheria Global Hospital — Advanced healthcare, expert doctors and compassionate care, 24/7.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A2540;--teal:#4DA1A9;--soft:#2D5A82;--white:#FFFFFF;--gray:#F8F9FA}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:'Open Sans',sans-serif;color:#333;background:var(--white);line-height:1.6}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;color:var(--navy);font-weight:700}
+a{text-decoration:none}
+.section{padding:80px 0}
+.bg-light-gray{background:var(--gray)}
+.text-teal{color:var(--teal)!important}
+
+/* Top bar */
+.top-bar{background:var(--navy);color:#fff;font-size:.85rem;padding:8px 0}
+.top-bar a{color:#fff;margin-left:10px}
+.top-bar a:hover{color:var(--teal)}
+
+/* Navbar */
+.navbar{background:#fff!important;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:.3s;padding:14px 0; height: 80px;}
+.navbar.scrolled{padding:8px 0}
+.navbar-brand{font-family:'Poppins',sans-serif;font-weight:800;color:var(--navy)!important;font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.navbar-brand i{color:var(--teal);font-size:1.8rem}
+.navbar-brand small{display:block;font-size:.65rem;letter-spacing:3px;color:var(--teal);font-weight:600}
+.navbar-brand img{width: 100px;}
+.nav-link{color:var(--navy)!important;font-weight:600;margin:0 6px;position:relative;cursor:pointer}
+.nav-link.active,.nav-link:hover{color:var(--teal)!important}
+.nav-link.active::after{content:"";position:absolute;left:12px;right:12px;bottom:-4px;height:2px;background:var(--teal);border-radius:2px}
+.btn-book{background:var(--teal);color:#fff;border:none;padding:10px 22px;border-radius:8px;font-weight:600;transition:.3s}
+.btn-book:hover{background:var(--navy);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,37,64,.25)}
+
+/* Hero */
+.hero-carousel .carousel-item{height:90vh;min-height:560px;background-size:cover;background-position:center;position:relative}
+.hero-carousel .carousel-item::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,37,64,.85) 0%,rgba(10,37,64,.55) 60%,rgba(10,37,64,.2) 100%)}
+.hero-carousel .carousel-caption{top:50%;transform:translateY(-50%);bottom:auto;text-align:left;left:8%;right:auto;max-width:600px}
+.hero-carousel h6{color:var(--teal);letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.hero-carousel h1{font-size:3.6rem;color:#fff;font-weight:800;line-height:1.1;margin:14px 0}
+.hero-carousel p{color:#e6eef5;font-size:1.1rem;margin-bottom:28px}
+.btn-outline-white{border:2px solid #fff;color:#fff;padding:10px 24px;border-radius:8px;font-weight:600;transition:.3s}
+.btn-outline-white:hover{background:#fff;color:var(--navy)}
+@media(max-width:768px){.hero-carousel h1{font-size:2.2rem}.hero-carousel .carousel-item{height:75vh}}
+
+/* Section title */
+.section-title{text-align:center;margin-bottom:50px}
+.section-title h6{color:var(--teal);letter-spacing:3px;font-weight:600;text-transform:uppercase;font-size:.85rem}
+.section-title h2{font-size:2.4rem;margin-top:8px}
+.section-title .divider{width:70px;height:3px;background:var(--teal);margin:14px auto;border-radius:3px}
+.section-title p{color:#5b6b7c;max-width:680px;margin:0 auto}
+
+/* Feature cards */
+.feature-card{background:#fff;border-radius:14px;padding:32px 24px;box-shadow:0 10px 30px rgba(10,37,64,.07);transition:.35s;height:100%;border-bottom:3px solid transparent}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(10,37,64,.15);border-bottom-color:var(--teal)}
+.feature-card .icon{width:64px;height:64px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:18px;transition:.3s}
+.feature-card:hover .icon{background:var(--navy);transform:rotate(-8deg) scale(1.05)}
+.feature-card h5{margin-bottom:10px}
+.feature-card p{color:#5b6b7c;font-size:.95rem;margin:0}
+
+/* Specialty card */
+.specialty-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(10,37,64,.08);transition:.35s;text-align:center;height:100%}
+.specialty-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(10,37,64,.18)}
+.specialty-card .img-wrap{height:180px;overflow:hidden;position:relative}
+.specialty-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.specialty-card:hover .img-wrap img{transform:scale(1.08)}
+.specialty-card .icon-circle{width:60px;height:60px;border-radius:50%;background:#fff;color:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:-30px auto 0;box-shadow:0 8px 18px rgba(10,37,64,.12);position:relative;z-index:2}
+.specialty-card .body{padding:18px 18px 26px}
+.specialty-card h5{margin:14px 0 6px}
+.specialty-card p{color:#5b6b7c;font-size:.9rem;margin:0}
+
+/* Stats */
+.stats-section{background:linear-gradient(135deg,var(--navy),var(--soft));color:#fff;padding:60px 0}
+.stat-item{text-align:center;padding:14px 8px;border-right:1px solid rgba(255,255,255,.15)}
+.stat-item:last-child{border-right:none}
+.stat-item i{font-size:2rem;color:var(--teal);margin-bottom:10px}
+.stat-item .num{font-family:'Poppins',sans-serif;font-size:2.6rem;font-weight:800;color:#fff}
+.stat-item .label{color:#cbd5e1;font-size:.95rem}
+@media(max-width:768px){.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}}
+
+/* About */
+.about-img{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 20px 40px rgba(10,37,64,.18)}
+.about-img img{width:100%;display:block}
+.check-list{list-style:none;padding:0;margin:18px 0}
+.check-list li{padding:8px 0;color:#345;display:flex;align-items:center;gap:10px}
+.check-list li i{color:var(--teal)}
+
+/* Booking form */
+.booking-form{background:#fff;border-radius:14px;padding:30px;box-shadow:0 14px 40px rgba(10,37,64,.1)}
+.booking-form .form-control,.booking-form .form-select{border-radius:8px;padding:12px 14px;border:1px solid #e3e8ef;margin-bottom:14px}
+.booking-form .form-control:focus,.booking-form .form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem rgba(77,161,169,.15)}
+.btn-primary-custom{background:var(--teal);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-weight:600;transition:.3s;width:100%}
+.btn-primary-custom:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+
+/* Doctor card */
+.doctor-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(10,37,64,.08);transition:.35s;text-align:center}
+.doctor-card:hover{transform:translateY(-8px);box-shadow:0 20px 45px rgba(10,37,64,.18)}
+.doctor-card .img-wrap{height:280px;overflow:hidden}
+.doctor-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.doctor-card:hover .img-wrap img{transform:scale(1.06)}
+.doctor-card .body{padding:22px}
+.doctor-card h5{margin:0 0 4px}
+.doctor-card .role{color:var(--teal);font-weight:600;font-size:.9rem;margin-bottom:10px}
+.doctor-card .socials a{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--gray);color:var(--navy);align-items:center;justify-content:center;margin:0 4px;transition:.3s}
+.doctor-card .socials a:hover{background:var(--teal);color:#fff}
+
+/* Testimonials */
+.testimonial-card{background:#fff;border-radius:14px;padding:30px;box-shadow:0 10px 30px rgba(10,37,64,.08);height:100%;position:relative}
+.testimonial-card .quote{color:var(--teal);font-size:2rem;opacity:.6}
+.testimonial-card p{color:#5b6b7c;font-style:italic;margin:14px 0 18px}
+.testimonial-card .person{display:flex;align-items:center;gap:14px}
+.testimonial-card .person img{width:54px;height:54px;border-radius:50%;object-fit:cover}
+.testimonial-card .person h6{margin:0;color:var(--navy)}
+.testimonial-card .person small{color:var(--teal)}
+
+/* Contact */
+.contact-card{background:#fff;padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(10,37,64,.07);text-align:center;height:100%;transition:.3s}
+.contact-card:hover{transform:translateY(-6px)}
+.contact-card .icon{width:64px;height:64px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 16px}
+.contact-card h5{margin-bottom:6px}
+.contact-card p{margin:0;color:#5b6b7c}
+.map-wrap{border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(10,37,64,.1)}
+.map-wrap iframe{width:100%;height:380px;border:0;display:block}
+
+/* CTA banner */
+.cta-banner{background:linear-gradient(135deg,var(--teal),var(--soft));color:#fff;padding:60px 0;text-align:center}
+.cta-banner h2{color:#fff}
+.cta-banner .btn-light{font-weight:600;padding:12px 28px;border-radius:8px;color:var(--navy)}
+
+/* Footer */
+footer{background:var(--navy);color:#cbd5e1;padding-top:60px}
+footer h5{color:#fff;margin-bottom:18px}
+footer a{color:#cbd5e1;display:block;padding:5px 0;transition:.3s;cursor:pointer}
+footer a:hover{color:var(--teal);padding-left:5px}
+footer .socials a{display:inline-flex;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);align-items:center;justify-content:center;margin-right:8px;padding:0}
+footer .socials a:hover{background:var(--teal);padding:0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:18px 0;margin-top:40px;text-align:center;font-size:.9rem}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* Scroll top */
+#scrollTop{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;border:none;display:none;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(10,37,64,.25);z-index:999;cursor:pointer}
+#scrollTop.show{display:flex}
+</style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <span><i class="fa-solid fa-clock me-2 text-teal"></i>24/7 Emergency Care</span>
+      <span class="ms-4"><i class="fa-solid fa-phone me-2 text-teal"></i>+91 98765 43210</span>
+      <span class="ms-4"><i class="fa-solid fa-envelope me-2 text-teal"></i>info@aetheriahospital.com</span>
+    </div>
+    <div>Follow Us:
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+        <img src="img/Gemini_Generated_Image_qpo65zqpo65zqpo6-removebg-preview.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a class="btn btn-book" href="#contact">Book Appointment</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="home">
+<div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" style="background-image:url('https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1600&q=80')">
+      <div class="carousel-caption">
+        <h6>Advanced Care. Personal Touch.</h6>
+        <h1>Your Health,<br>Our Priority</h1>
+        <p>Aetheria Global Hospital is committed to providing exceptional healthcare with compassion, innovation, and excellence.</p>
+        <a href="#contact" class="btn btn-book me-2">Book Appointment</a>
+        <a href="#services" class="btn btn-outline-white">Our Services <i class="fa-solid fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1600&q=80')">
+      <div class="carousel-caption">
+        <h6>World-Class Specialists</h6>
+        <h1>Expert Doctors,<br>Trusted Care</h1>
+        <p>Meet our team of award-winning physicians delivering world-class outcomes across every specialty.</p>
+        <a href="#doctors" class="btn btn-book me-2">Meet Our Doctors</a>
+        <a href="#about" class="btn btn-outline-white">Learn More <i class="fa-solid fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+    <div class="carousel-item" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80')">
+      <div class="carousel-caption">
+        <h6>State-of-the-Art Technology</h6>
+        <h1>Modern Hospital,<br>Better Outcomes</h1>
+        <p>Advanced diagnostics, robotic surgery, and AI-assisted care for safer, faster recovery.</p>
+        <a href="#services" class="btn btn-book me-2">Explore Services</a>
+        <a href="#contact" class="btn btn-outline-white">Contact Us <i class="fa-solid fa-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+</div>
+</section>
+
+<!-- Features -->
+<section class="section bg-light-gray">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal"><div class="feature-card"><div class="icon"><i class="fa-solid fa-truck-medical"></i></div><h5>24/7 Emergency</h5><p>Round-the-clock emergency care for you and your loved ones.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="feature-card"><div class="icon"><i class="fa-solid fa-user-doctor"></i></div><h5>Expert Doctors</h5><p>Highly qualified, experienced doctors across all specialties.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="feature-card"><div class="icon"><i class="fa-solid fa-microscope"></i></div><h5>Advanced Technology</h5><p>State-of-the-art infrastructure and advanced medical technology.</p></div></div>
+      <div class="col-md-6 col-lg-3 reveal"><div class="feature-card"><div class="icon"><i class="fa-solid fa-heart-pulse"></i></div><h5>Patient First</h5><p>We prioritize your comfort, safety, and faster recovery.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal"><div class="about-img"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" alt="About Hospital"></div></div>
+      <div class="col-lg-6 reveal">
+        <h6 class="text-teal text-uppercase fw-bold" style="letter-spacing:3px">Who We Are</h6>
+        <h2>Caring for Lives, Building Trust</h2>
+        <div style="width:60px;height:3px;background:var(--teal);margin:14px 0"></div>
+        <p>For over 25 years, Aetheria Global Hospital has been a trusted name in healthcare — delivering compassionate, expert and innovative medical care to millions across the region.</p>
+        <p>Our multidisciplinary team works together to provide comprehensive treatments backed by cutting-edge technology and rigorous quality standards.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-circle-check"></i>NABH & JCI accredited facility</li>
+          <li><i class="fa-solid fa-circle-check"></i>Award-winning specialists</li>
+          <li><i class="fa-solid fa-circle-check"></i>Patient-first philosophy</li>
+          <li><i class="fa-solid fa-circle-check"></i>Cashless insurance & TPA support</li>
+        </ul>
+        <a href="#contact" class="btn btn-book mt-2">Book Appointment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services / Specialties -->
+<section id="services" class="section bg-light-gray">
+  <div class="container">
+    <div class="section-title reveal">
+      <h6>Our Services</h6>
+      <h2>Premium Medical Specialties</h2>
+      <div class="divider"></div>
+      <p>Comprehensive care across a wide range of medical specialties delivered by world-class clinicians.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80" alt="Cardiology"></div><div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div><div class="body"><h5>Cardiology</h5><p>Advanced care for heart and vascular conditions.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80" alt="Neurology"></div><div class="icon-circle"><i class="fa-solid fa-brain"></i></div><div class="body"><h5>Neurology</h5><p>Expert treatment for brain, spine & nervous system.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=800&q=80" alt="Orthopedics"></div><div class="icon-circle"><i class="fa-solid fa-bone"></i></div><div class="body"><h5>Orthopedics</h5><p>Joint replacement, sports injuries and fracture care.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80" alt="Cancer Care"></div><div class="icon-circle"><i class="fa-solid fa-ribbon"></i></div><div class="body"><h5>Cancer Care</h5><p>Comprehensive cancer treatment & support.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80" alt="Maternity Care"></div><div class="icon-circle"><i class="fa-solid fa-baby"></i></div><div class="body"><h5>Maternity Care</h5><p>Compassionate care for mom & baby.</p></div></div></div>
+      <div class="col-md-6 col-lg-4 reveal"><div class="specialty-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=800&q=80" alt="Pediatrics"></div><div class="icon-circle"><i class="fa-solid fa-child"></i></div><div class="body"><h5>Pediatrics</h5><p>Specialized healthcare for children.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 col-md-3"><div class="stat-item"><i class="fa-solid fa-users"></i><div class="num counter" data-target="25" data-suffix="+">0</div><div class="label">Years of Excellence</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><i class="fa-solid fa-user-doctor"></i><div class="num counter" data-target="250" data-suffix="+">0</div><div class="label">Expert Doctors</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><i class="fa-solid fa-face-smile"></i><div class="num counter" data-target="1000000" data-suffix="+">0</div><div class="label">Happy Patients</div></div></div>
+      <div class="col-6 col-md-3"><div class="stat-item"><i class="fa-solid fa-bed"></i><div class="num counter" data-target="500" data-suffix="+">0</div><div class="label">Hospital Beds</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors -->
+<section id="doctors" class="section">
+  <div class="container">
+    <div class="section-title reveal"><h6>Meet The Team</h6><h2>Our Expert Doctors</h2><div class="divider"></div>
+      <p>Our doctors bring decades of experience and the latest in medical innovation to every patient.</p></div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3 reveal"><div class="doctor-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80" alt="Dr. Arjun Khanna"></div><div class="body"><h5>Dr. Arjun Khanna</h5><div class="role">Cardiologist</div><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div></div>
+      <div class="col-sm-6 col-lg-3 reveal"><div class="doctor-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" alt="Dr. Neha Iyer"></div><div class="body"><h5>Dr. Neha Iyer</h5><div class="role">Neurologist</div><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div></div>
+      <div class="col-sm-6 col-lg-3 reveal"><div class="doctor-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" alt="Dr. Rohan Mehta"></div><div class="body"><h5>Dr. Rohan Mehta</h5><div class="role">Orthopedic Surgeon</div><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div></div>
+      <div class="col-sm-6 col-lg-3 reveal"><div class="doctor-card"><div class="img-wrap"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Nair"></div><div class="body"><h5>Dr. Priya Nair</h5><div class="role">Pediatrician</div><div class="socials"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section bg-light-gray">
+  <div class="container">
+    <div class="section-title reveal"><h6>Testimonials</h6><h2>What Our Patients Say</h2><div class="divider"></div></div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal"><div class="testimonial-card"><i class="fa-solid fa-quote-left quote"></i><p>The doctors and staff were incredibly compassionate. World-class care from start to finish.</p><div class="person"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt=""><div><h6>Priya Sharma</h6><small>Cardiology Patient</small></div></div></div></div>
+      <div class="col-md-4 reveal"><div class="testimonial-card"><i class="fa-solid fa-quote-left quote"></i><p>Modern facilities and a personal touch — I felt safe and well cared for at every step.</p><div class="person"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt=""><div><h6>Rahul Verma</h6><small>Orthopedic Patient</small></div></div></div></div>
+      <div class="col-md-4 reveal"><div class="testimonial-card"><i class="fa-solid fa-quote-left quote"></i><p>From admission to discharge, everything was smooth. Highly recommended hospital.</p><div class="person"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt=""><div><h6>Anita Mehta</h6><small>Maternity Patient</small></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-title reveal"><h6>Get In Touch</h6><h2>Contact Us</h2><div class="divider"></div>
+      <p>Have a question or need to book an appointment? Reach out and our team will respond within 24 hours.</p></div>
+    <div class="row g-4 mb-5">
+      <div class="col-md-4 reveal"><div class="contact-card"><div class="icon"><i class="fa-solid fa-location-dot"></i></div><h5>Visit Us</h5><p>123 Health Avenue,<br>New Delhi, India 110001</p></div></div>
+      <div class="col-md-4 reveal"><div class="contact-card"><div class="icon"><i class="fa-solid fa-phone"></i></div><h5>Call Us</h5><p>+91 98765 43210<br>+91 11 4000 0000</p></div></div>
+      <div class="col-md-4 reveal"><div class="contact-card"><div class="icon"><i class="fa-solid fa-envelope"></i></div><h5>Email Us</h5><p>info@aetheriahospital.com<br>support@aetheriahospital.com</p></div></div>
+    </div>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6 reveal">
+        <form class="booking-form js-form">
+          <h4 class="mb-3">Book an Appointment</h4>
+          <div class="row">
+            <div class="col-md-6"><input class="form-control" placeholder="Full Name" required></div>
+            <div class="col-md-6"><input class="form-control" placeholder="Phone Number" required></div>
+            <div class="col-md-6"><input type="email" class="form-control" placeholder="Email Address" required></div>
+            <div class="col-md-6"><select class="form-select" required><option value="">Department</option><option>Cardiology</option><option>Neurology</option><option>Orthopedics</option><option>Pediatrics</option><option>Maternity</option><option>General</option></select></div>
+            <div class="col-12"><input type="date" class="form-control" required></div>
+            <div class="col-12"><textarea class="form-control" rows="4" placeholder="Your Message"></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary-custom">Book Now</button>
+        </form>
+      </div>
+      <div class="col-lg-6 reveal">
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.234!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjAiTiA3N8KwMTInMzIuNCJF!5e0!3m2!1sen!2sin!4v1700000000" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="mt-4 p-4 bg-white rounded shadow-sm">
+          <h5 class="mb-3"><i class="fa-solid fa-clock text-teal me-2"></i>Working Hours</h5>
+          <p class="mb-1"><strong>OPD:</strong> Mon - Sat: 8:00 AM - 8:00 PM</p>
+          <p class="mb-1"><strong>Sunday:</strong> 9:00 AM - 2:00 PM</p>
+          <p class="mb-0 text-teal fw-bold"><i class="fa-solid fa-truck-medical me-2"></i>Emergency: 24/7 Available</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="mb-3">Need Medical Assistance? We're Here 24/7</h2>
+    <p class="mb-4">Talk to our experts or book an appointment with the best specialists today.</p>
+    <a href="#contact" class="btn btn-light me-2"><i class="fa-solid fa-calendar-check me-2"></i>Book Appointment</a>
+    <a href="tel:+919876543210" class="btn btn-outline-white"><i class="fa-solid fa-phone me-2"></i>+91 98765 43210</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4 col-md-6">
+        <h5><i class="fa-solid fa-hospital text-teal me-2"></i>Aetheria Global</h5>
+        <p>Aetheria Global Hospital is committed to delivering compassionate, innovative and excellent healthcare across all specialties.</p>
+        <div class="socials mt-3">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Departments</h5>
+        <a href="#services">Cardiology</a>
+        <a href="#services">Neurology</a>
+        <a href="#services">Orthopedics</a>
+        <a href="#services">Pediatrics</a>
+        <a href="#services">Maternity Care</a>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h5>Contact</h5>
+        <p><i class="fa-solid fa-location-dot text-teal me-2"></i>123 Health Avenue, New Delhi, India</p>
+        <p><i class="fa-solid fa-phone text-teal me-2"></i>+91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope text-teal me-2"></i>info@aetheriahospital.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Aetheria Global Hospital. All rights reserved.</div>
+  </div>
+</footer>
+
+<button id="scrollTop" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Sticky navbar shadow + scroll-top button
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('.navbar');
+  if(nav) nav.classList.toggle('scrolled', window.scrollY>30);
+  const top=document.getElementById('scrollTop');
+  if(top) top.classList.toggle('show', window.scrollY>400);
+
+  // Active nav highlight on scroll
+  const sections=document.querySelectorAll('section[id]');
+  let cur='';
+  sections.forEach(s=>{
+    const t=s.offsetTop-120;
+    if(window.scrollY>=t) cur=s.id;
+  });
+  document.querySelectorAll('.nav-link').forEach(l=>{
+    l.classList.toggle('active', l.getAttribute('href')==='#'+cur);
+  });
+});
+
+// Scroll to top
+document.getElementById('scrollTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Auto close mobile menu on link click
+document.querySelectorAll('#mainNav .nav-link, #mainNav .btn-book').forEach(l=>{
+  l.addEventListener('click',()=>{
+    const c=document.getElementById('mainNav');
+    if(c.classList.contains('show')) new bootstrap.Collapse(c).hide();
+  });
+});
+
+// Reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target);} });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Counter animation
+const cIO=new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(!en.isIntersecting) return;
+    const el=en.target; const target=+el.dataset.target; const dur=1800;
+    const start=performance.now();
+    const tick=(now)=>{
+      const p=Math.min((now-start)/dur,1);
+      el.textContent=Math.floor(p*target).toLocaleString();
+      if(p<1) requestAnimationFrame(tick);
+      else el.textContent=target.toLocaleString()+(el.dataset.suffix||'');
+    };
+    requestAnimationFrame(tick);
+    cIO.unobserve(el);
+  });
+},{threshold:.4});
+document.querySelectorAll('.counter').forEach(c=>cIO.observe(c));
+
+// Form submit handler
+document.addEventListener('submit',(e)=>{
+  if(e.target.matches('.js-form')){
+    e.preventDefault();
+    const btn=e.target.querySelector('button[type=submit]');
+    const orig=btn.innerHTML;
+    btn.disabled=true; btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+    setTimeout(()=>{
+      btn.innerHTML='<i class="fa-solid fa-check"></i> Sent successfully!';
+      e.target.reset();
+      setTimeout(()=>{btn.disabled=false; btn.innerHTML=orig;},2200);
+    },1200);
+  }
+});
+</script>
+</body>
+</html>
